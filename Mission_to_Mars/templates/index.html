@@ -8,7 +8,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
-<body style="background-color:white;">
+<body>
   <div class="container">
     <div class="row p-5" style="background-color: lightgray; border-radius: 5px;">
         <div class="col-md-12 font-weight-bold text-center">
@@ -49,20 +49,16 @@
     <h3 class="text-center font-weight-bold mt-5">Mars Hemispheres</h3>
     <hr>
     <div class='card-deck'>
-      <div class='col-md-12'>
-          <div class="row">
-              {% for obj in data.hemisphere_data %}
-              <div class="col-md-6">
-                  <div class="card m-5">
-                      <img class="card-img-top" src="{{obj.url}}" />
-                      <div class="card-body">
-                          <p class="card-text font-weight-bold">{{ obj.title }}</p>
-                      </div>
-                  </div>
-              </div>
-              {% endfor %}
-          </div>              
-      </div>
+        {% for obj in data.hemisphere_data %}
+        <div class="col-md-6">
+            <div class="card m-5">
+                <img class="card-img-top" src="{{obj.url}}" />
+                <div class="card-body">
+                    <p class="card-text font-weight-bold">{{ obj.title }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
   </div>
 </body>
